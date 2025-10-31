@@ -11,6 +11,12 @@ public Rgb(int red, int green, int blue){
   this.blue = blue;
 }
 
+
+public String getCodiceRGB(int red, int green, int blue) {
+    String hex = String.format("#%02X%02X%02X", red, green, blue); // 0 riempi con 0 se n e piu corto, 2 larghezza minima X converti in base 16
+    return hex;
+}
+  
 public int getRed() {
         return red;
     }
