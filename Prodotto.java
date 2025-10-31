@@ -22,6 +22,59 @@ public class Prodotto {
         nLegoTotali++;
   }
 
+    public static void stampaListaMattoncini(Lego[] lista) {
+        if (lista == null || lista.length == 0) {
+            System.out.println("lista e vuota");
+            return;
+        }
+
+        boolean tuttiNull = true;
+
+        for (Lego m : lista) {
+            if (m != null) {
+                tuttiNull = false;
+                System.out.println("Codice: " + m.getCodiceUnivoco()
+                        + ", Peso: " + m.getPeso()
+                        + ", Colore: " + m.getColore()
+                        + ", Dimensioni: " + m.getDimensione());
+            }
+        }
+        if (tuttiNull) {
+            System.out.println("lista e vuota");
+        }
+    }
+
+    public float calcolaPesoTotale() {
+        float pesoTotale = 0;
+
+
+
+        if (listaMattoncini.length == 0 || listaMattoncini == null) {
+            System.out.println("lista dei mattoncini vuota");
+            return pesoTotale;
+        }
+
+        // ciclo x litsa
+        for (int i = 0; i < listaMattoncini.length; i++) {
+            Lego mattoncino = listaMattoncini[i];
+
+            // controllo se in quella posiziopne ce un mattonicno
+            if (mattoncino != null) {
+                // calcolo peso
+                float pesoSingolo = mattoncino.getPeso();
+                pesoTotale += pesoSingolo;
+
+                // stampo mattoncino singolo e se e non ce
+                System.out.println("Mattoncino " + i + " peso: " + pesoSingolo);
+            } else {
+                System.out.println("Mattoncino " + i + " ignorato.");
+            }
+        }
+
+        return pesoTotale;
+    }
+
+
 private void raddoppiaSpazio() {
     listaMattoncini = Arrays.copyOf(listaMattoncini, listaMattoncini.length * 2);
     System.out.println("spazio raddoppiato a " + listaMattoncini.length + " elementi.");

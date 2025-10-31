@@ -2,7 +2,12 @@ public class Dimensioni{
   private float larghezza;
   private float lunghezza;
   private float altezza;
-  
+
+
+    public String toString() {
+        return larghezza + "x" + lunghezza + "x" + altezza;
+    }
+
 // metodi cost.
   public Dimensioni(){}
 
@@ -14,11 +19,11 @@ public class Dimensioni{
   
 // setter&getter
   public float getLarghezza() {
-        return largezza;
+        return larghezza;
     }
 
     public void setLarghezza(float largezza) {
-        this.largezza = largezza;
+        this.larghezza = largezza;
     }
 
     // Getter e Setter per lunghezza
