@@ -2,14 +2,16 @@ public class Rgb {
   private int red;
   private int green;
   private int blue;
+  private String codiceRGB;
 
 public Rgb(){}
 
-public Rgb(int red, int green, int blue){
-  this.red = red;
-  this.green = green;
-  this.blue = blue;
-}
+    public Rgb(int red, int green, int blue) {
+        this.red = red;
+        this.green = green;
+        this.blue = blue;
+        this.codiceRGB = getCodiceRGB(red, green, blue);
+    }
 
 
 public String getCodiceRGB(int red, int green, int blue) {
